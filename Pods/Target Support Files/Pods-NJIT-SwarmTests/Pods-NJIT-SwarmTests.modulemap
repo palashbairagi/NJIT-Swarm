@@ -1,0 +1,6 @@
+framework module Pods_NJIT_SwarmTests {
+  umbrella header "Pods-NJIT-SwarmTests-umbrella.h"
+
+  export *
+  module * { export * }
+}
