@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "AC162F897655F4C9CA0BB1BBEC36CF8B"
+               BlueprintIdentifier = "3AFCD5EA0CEB96A638D208266D100505"
                BuildableName = "Pods_NJIT_Swarm.framework"
                BlueprintName = "Pods-NJIT-Swarm"
                ReferencedContainer = "container:Pods.xcodeproj">
@@ -47,7 +47,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "AC162F897655F4C9CA0BB1BBEC36CF8B"
+            BlueprintIdentifier = "3AFCD5EA0CEB96A638D208266D100505"
             BuildableName = "Pods_NJIT_Swarm.framework"
             BlueprintName = "Pods-NJIT-Swarm"
             ReferencedContainer = "container:Pods.xcodeproj">
