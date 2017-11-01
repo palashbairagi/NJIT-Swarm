@@ -7,9 +7,10 @@ target 'NJIT-Swarm' do
 
   # Pods for NJIT-Swarm
 
-	pod 'Firebase/Core'
+	pod 'Firebase'
 	pod 'Firebase/Database'
 	pod 'Firebase/Auth'
+    pod 'Firebase/Storage'
 
   target 'NJIT-SwarmTests' do
     inherit! :search_paths
