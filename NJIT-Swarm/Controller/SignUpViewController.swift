@@ -10,6 +10,8 @@ import UIKit
 
 class SignUpViewController: UIViewController {
 
+    let SIGNUP_TO_HOME_SEGUE = "signupToHome"
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -29,12 +31,12 @@ class SignUpViewController: UIViewController {
     @IBOutlet weak var phoneNumTxt: UITextField!
     
     @IBAction func registerBtn(_ sender: Any) {
-        if emailTxt.text != "" && passwordTxt.text != "" {
-            AuthProvider.Instance.signUp(email: emailTxt.text!, password: passwordTxt.text!, authHandler: { (message) in
+        if emailTxt.text != "" && passwordTxt.text != "" && nameTxt.text != "" && phoneNumTxt.text != "" {
+            AuthProvider.Instance.signUp(email: emailTxt.text!, password: passwordTxt.text!, username: nameTxt.text!, phone: phoneNumTxt.text!, authHandler: { (message) in
                 if message != nil {
-                    
+                    self.showAlert(message: message!)
                 } else {
-                    
+                    self.login()
                 }
             })
         }
@@ -50,6 +52,25 @@ class SignUpViewController: UIViewController {
     */
     @IBAction func back(_ sender: Any) {
         dismiss(animated: true, completion: nil)
+    }
+    
+    func login() {
+        if emailTxt.text != "" && passwordTxt.text != "" {
+            AuthProvider.Instance.login(email: emailTxt.text!, password: passwordTxt.text!, authHandler: { (message) in
+                if message != nil {
+                    self.showAlert(message: message!)
+                } else {
+                    self.performSegue(withIdentifier: self.SIGNUP_TO_HOME_SEGUE, sender: nil)
+                }
+            })
+        }
+    }
+    
+    func showAlert(message: String) {
+        let alert = UIAlertController(title: "Alert", message: message, preferredStyle: .alert)
+        let ok = UIAlertAction(title: "OK", style: .default, handler: nil)
+        alert.addAction(ok)
+        present(alert, animated: true, completion: nil)
     }
     
 }

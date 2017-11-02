@@ -104,7 +104,7 @@
                         <outlet property="nameTxt" destination="R1q-kD-a77" id="4Zu-KX-IUJ"/>
                         <outlet property="passwordTxt" destination="WKO-5D-Owk" id="EjS-7i-rtw"/>
                         <outlet property="phoneNumTxt" destination="evi-i9-Kh2" id="cKA-Ov-44N"/>
-                        <segue destination="RND-9o-4EL" kind="show" id="Hzc-Qi-zkz"/>
+                        <segue destination="RND-9o-4EL" kind="show" identifier="signupToHome" id="Hzc-Qi-zkz"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JPs-e0-YkK" userLabel="First Responder" sceneMemberID="firstResponder"/>
