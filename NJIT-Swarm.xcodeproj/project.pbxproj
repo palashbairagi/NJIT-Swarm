@@ -15,6 +15,7 @@
 		6E1C38701F9196850077BDE5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6E1C386E1F9196850077BDE5 /* LaunchScreen.storyboard */; };
 		6E1C387B1F9196850077BDE5 /* NJIT_SwarmTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E1C387A1F9196850077BDE5 /* NJIT_SwarmTests.swift */; };
 		6E1C38861F9196850077BDE5 /* NJIT_SwarmUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E1C38851F9196850077BDE5 /* NJIT_SwarmUITests.swift */; };
+		6EDD94F61FAAAA68001C15D9 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6E1C38931F9196C90077BDE5 /* GoogleService-Info.plist */; };
 		C2264122B46E81F59614D682 /* Pods_NJIT_SwarmUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 531E0889624962F42DE52D6A /* Pods_NJIT_SwarmUITests.framework */; };
 		FE271D9ECA8FE84746507C8F /* Pods_NJIT_SwarmTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE4000B129262CC5060DFC9C /* Pods_NJIT_SwarmTests.framework */; };
 /* End PBXBuildFile section */
@@ -283,6 +284,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6EDD94F61FAAAA68001C15D9 /* GoogleService-Info.plist in Resources */,
 				6E1C38701F9196850077BDE5 /* LaunchScreen.storyboard in Resources */,
 				6E1C386D1F9196850077BDE5 /* Assets.xcassets in Resources */,
 				6E1C386B1F9196850077BDE5 /* Main.storyboard in Resources */,
