@@ -11,6 +11,7 @@ import UIKit
 class LoginViewController: UIViewController {
     
     private let HOME_PAGE_SEGUE = "homePage"
+    private let SIGN_UP_SEGUE = "signUpPage"
 
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
@@ -41,17 +42,18 @@ class LoginViewController: UIViewController {
     } // login
     
     @IBAction func signUp(_ sender: Any) {
-        if emailTextField.text != "" && passwordTextField.text != "" {
-            AuthProvider.Instance.signUp(email: emailTextField.text!, password: passwordTextField.text!, authHandler: { (message) in
-                if message != nil {
-                    self.showAlert(message: message!)
-                } else {
-                    self.login(sender)
-                }
-            })
-        } else {
-            showAlert(message: AUTH_ERROR_MESSAGE.EMAIL_PASSWORD_EMPTY)
-        }
+//        if emailTextField.text != "" && passwordTextField.text != "" {
+//            AuthProvider.Instance.signUp(email: emailTextField.text!, password: passwordTextField.text!, authHandler: { (message) in
+//                if message != nil {
+//                    self.showAlert(message: message!)
+//                } else {
+//                    self.login(sender)
+//                }
+//            })
+//        } else {
+//            showAlert(message: AUTH_ERROR_MESSAGE.EMAIL_PASSWORD_EMPTY)
+//        }
+        performSegue(withIdentifier: SIGN_UP_SEGUE, sender: nil)
     } // signUp
     
     func showAlert(message: String) {
