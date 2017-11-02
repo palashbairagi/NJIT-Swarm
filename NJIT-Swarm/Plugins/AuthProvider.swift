@@ -38,11 +38,12 @@ class AuthProvider {
         }
     }
     
-    func signUp(email: String, password: String, authHandler: AuthHandler?) {
+    func signUp(email: String, password: String, username: String, phone: String, authHandler: AuthHandler?) {
         Auth.auth().createUser(withEmail: email, password: password) { (user, error) in
             if (error != nil) {
                 self.handleError(withError: error! as NSError, authHandler: authHandler)
             } else {
+                DBProvider.Instance.saveUser(withID: user!.uid, email: email, password: password, username: username, phone: phone)
                 authHandler?(nil)
             }
         }
