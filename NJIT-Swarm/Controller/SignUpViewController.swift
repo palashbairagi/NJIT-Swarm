@@ -20,8 +20,25 @@ class SignUpViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    @IBOutlet weak var nameTxt: UITextField!
     
-
+    @IBOutlet weak var emailTxt: UITextField!
+    
+    @IBOutlet weak var passwordTxt: UITextField!
+    
+    @IBOutlet weak var phoneNumTxt: UITextField!
+    
+    @IBAction func registerBtn(_ sender: Any) {
+        if emailTxt.text != "" && passwordTxt.text != "" {
+            AuthProvider.Instance.signUp(email: emailTxt.text!, password: passwordTxt.text!, authHandler: { (message) in
+                if message != nil {
+                    
+                } else {
+                    
+                }
+            })
+        }
+    }
     /*
     // MARK: - Navigation
 
