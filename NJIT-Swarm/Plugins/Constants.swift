@@ -10,10 +10,17 @@ import Foundation
 
 class Constants {
     // DBProvider
-    static let USER = "user"
     // Keys for user
+    static let USER = "user"
     static let EMAIL = "email"
     static let PASSWORD = "password"
     static let USERNAME = "username"
     static let PHONE = "phone"
+    // Keys for check in
+    static let CHECKIN = "checkin"
+    static let LATITUDE = "latitude"
+    static let LONGITUDE = "longitude"
+    static let PLACE = "place"
+    static let TIMESTAMP = "timestamp"
+    static let UID = "uid"
 }

@@ -17,12 +17,16 @@ class DBProvider {
     static var Instance: DBProvider {
         return _instance
     }
-    var dbRef:DatabaseReference {
+    var dbRef: DatabaseReference {
         return Database.database().reference()
     }
     
-    var userRef:DatabaseReference {
+    var userRef: DatabaseReference {
         return dbRef.child(Constants.USER)
+    }
+    
+    var checkinRef: DatabaseReference {
+        return dbRef.child(Constants.CHECKIN)
     }
     
     func saveUser(withID: String, email: String, password: String, username: String, phone: String) {
@@ -62,6 +66,33 @@ class DBProvider {
      */
     func getUsers(withKey: String, value: Any, dataHandler: DataHandler?) {
         userRef.queryOrdered(byChild: withKey).queryEqual(toValue: value).observeSingleEvent(of: .value) { (snapshot) in
+            if let value = snapshot.value {
+                let data = value as! [String: Any]
+                dataHandler?(data)
+            } else {
+                dataHandler?(nil)
+            }
+        }
+    }
+    
+    func saveCheckin(withID: String, place: String, latitude: Double, longitude: Double) {
+        let data: Dictionary<String, Any> = [Constants.UID: withID, Constants.PLACE: place, Constants.LATITUDE: latitude, Constants.LONGITUDE: longitude, Constants.TIMESTAMP: ServerValue.timestamp()]
+        checkinRef.childByAutoId().setValue(data)
+    }
+    
+    func getCheckins(dataHandler: DataHandler?) {
+        checkinRef.queryOrdered(byChild: Constants.TIMESTAMP).queryLimited(toLast: 100).observeSingleEvent(of: .value) { (snapshot) in
+            if let value = snapshot.value {
+                let data = value as! [String: Any]
+                dataHandler?(data)
+            } else {
+                dataHandler?(nil)
+            }
+        }
+    }
+    
+    func getCheckins(withID: String, dataHandler: DataHandler?) {
+        checkinRef.queryOrdered(byChild: Constants.TIMESTAMP).queryEqual(toValue: withID, childKey: Constants.UID).observeSingleEvent(of: .value) { (snapshot) in
             if let value = snapshot.value {
                 let data = value as! [String: Any]
                 dataHandler?(data)

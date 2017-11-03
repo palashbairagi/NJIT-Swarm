@@ -17,6 +17,8 @@
 		6E1C38701F9196850077BDE5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6E1C386E1F9196850077BDE5 /* LaunchScreen.storyboard */; };
 		6E1C387B1F9196850077BDE5 /* NJIT_SwarmTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E1C387A1F9196850077BDE5 /* NJIT_SwarmTests.swift */; };
 		6E1C38861F9196850077BDE5 /* NJIT_SwarmUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E1C38851F9196850077BDE5 /* NJIT_SwarmUITests.swift */; };
+		6E46A1D81FACE1CF007571A8 /* FriendsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E46A1D71FACE1CF007571A8 /* FriendsViewController.swift */; };
+		6E46A1DA1FACE2C5007571A8 /* AddFriendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E46A1D91FACE2C5007571A8 /* AddFriendViewController.swift */; };
 		6EB189D41FABAF3D002CF9B9 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EB189D31FABAF3D002CF9B9 /* ProfileViewController.swift */; };
 		6EB189D61FABB11B002CF9B9 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EB189D51FABB11B002CF9B9 /* SignUpViewController.swift */; };
 		6EB189D81FABBE75002CF9B9 /* DBProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EB189D71FABBE75002CF9B9 /* DBProvider.swift */; };
@@ -64,6 +66,8 @@
 		6E1C38851F9196850077BDE5 /* NJIT_SwarmUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NJIT_SwarmUITests.swift; sourceTree = "<group>"; };
 		6E1C38871F9196850077BDE5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6E1C38931F9196C90077BDE5 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		6E46A1D71FACE1CF007571A8 /* FriendsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsViewController.swift; sourceTree = "<group>"; };
+		6E46A1D91FACE2C5007571A8 /* AddFriendViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddFriendViewController.swift; sourceTree = "<group>"; };
 		6EB189D31FABAF3D002CF9B9 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		6EB189D51FABB11B002CF9B9 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		6EB189D71FABBE75002CF9B9 /* DBProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBProvider.swift; sourceTree = "<group>"; };
@@ -199,6 +203,8 @@
 				6E167EB61FAB055000CB628B /* HomeViewController.swift */,
 				6EB189D31FABAF3D002CF9B9 /* ProfileViewController.swift */,
 				6EB189D51FABB11B002CF9B9 /* SignUpViewController.swift */,
+				6E46A1D71FACE1CF007571A8 /* FriendsViewController.swift */,
+				6E46A1D91FACE2C5007571A8 /* AddFriendViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -527,6 +533,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				6EB189D61FABB11B002CF9B9 /* SignUpViewController.swift in Sources */,
+				6E46A1D81FACE1CF007571A8 /* FriendsViewController.swift in Sources */,
+				6E46A1DA1FACE2C5007571A8 /* AddFriendViewController.swift in Sources */,
 				6EDD94FB1FAAAC26001C15D9 /* LoginViewController.swift in Sources */,
 				6E1C38661F9196850077BDE5 /* AppDelegate.swift in Sources */,
 				6EB189D81FABBE75002CF9B9 /* DBProvider.swift in Sources */,

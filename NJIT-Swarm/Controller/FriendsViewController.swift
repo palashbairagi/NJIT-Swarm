@@ -1,22 +1,18 @@
 //
-//  HomeViewController.swift
+//  FriendsViewController.swift
 //  NJIT-Swarm
 //
-//  Created by Min Zeng on 02/11/2017.
+//  Created by Min Zeng on 03/11/2017.
 //  Copyright © 2017 Team4. All rights reserved.
 //
 
 import UIKit
-import MapKit
-import CoreLocation
 
-class HomeViewController: UIViewController, CLLocationManagerDelegate, UITableViewDataSource, UITableViewDelegate {
+class FriendsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
-    private let PROFILE_PAGE_SEGUE = "profilePage"
-    private let FRIEND_PAGE_SEGUE = "friendPage"
-    
-    @IBOutlet weak var homeMapView: MKMapView!
-    @IBOutlet weak var homeTableView: UITableView!
+    private let ADD_FRIEND_SEGUE = "addFriend"
+
+    @IBOutlet weak var friendTableView: UITableView!
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 0
@@ -26,7 +22,6 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate, UITableVi
         return UITableViewCell()
     }
     
-
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -38,12 +33,11 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate, UITableVi
         // Dispose of any resources that can be recreated.
     }
     
-    @IBAction func profile(_ sender: Any) {
-        performSegue(withIdentifier: PROFILE_PAGE_SEGUE, sender: nil)
+    @IBAction func back(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
     }
-    
-    @IBAction func friend(_ sender: Any) {
-        performSegue(withIdentifier: FRIEND_PAGE_SEGUE, sender: nil)
+    @IBAction func addFriend(_ sender: Any) {
+        performSegue(withIdentifier: ADD_FRIEND_SEGUE, sender: nil)
     }
     
     /*
