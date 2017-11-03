@@ -360,9 +360,11 @@
                         <outlet property="passwordTextfield" destination="ywR-ht-ZKj" id="Nii-Dy-68s"/>
                         <outlet property="phoneTextField" destination="qKK-z8-xJK" id="mML-Mq-bLI"/>
                         <outlet property="userNameTextfield" destination="YhE-YQ-B9l" id="m8k-qv-0c9"/>
+                        <segue destination="28R-p5-mcW" kind="unwind" identifier="unwindToViewController" unwindAction="prepareForUnwindWithSegue:" id="lQH-BK-BaU"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IgD-tn-FuB" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="28R-p5-mcW" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1640.8" y="1371.3643178410796"/>
         </scene>
@@ -443,6 +445,6 @@
         <image name="plan-trip" width="30" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Hzc-Qi-zkz"/>
+        <segue reference="blc-6D-iHg"/>
     </inferredMetricsTieBreakers>
 </document>

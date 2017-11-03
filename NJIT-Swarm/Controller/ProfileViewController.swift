@@ -12,6 +12,7 @@ class ProfileViewController: UIViewController {
     
     private let CAN_NOT_BE_EMPTY = "It Can Not Be Empty"
     private let LOAD_DATA_FAILED = "Load Data Failed"
+    private let LOGOUT_FAILED = "Logout Failed"
 
     @IBOutlet weak var emailTextfield: UITextField!
     @IBOutlet weak var passwordTextfield: UITextField!
@@ -54,7 +55,11 @@ class ProfileViewController: UIViewController {
     }
     
     @IBAction func logout(_ sender: Any) {
-        
+        if AuthProvider.Instance.logout() {
+            self.performSegue(withIdentifier: "unwindToViewController", sender: self)
+        } else {
+            showAlert(message: LOGOUT_FAILED)
+        }
     } // logout
     
     @IBAction func back(_ sender: Any) {

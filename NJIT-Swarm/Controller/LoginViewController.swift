@@ -27,12 +27,16 @@ class LoginViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    @IBAction func prepareForUnwind(segue: UIStoryboardSegue) {}
+    
     @IBAction func login(_ sender: Any) {
         if emailTextField.text != "" && passwordTextField.text != "" {
             AuthProvider.Instance.login(email: emailTextField.text!, password: passwordTextField.text!, authHandler: { (message) in
                 if message != nil {
                     self.showAlert(message: message!)
                 } else {
+                    self.emailTextField.text = ""
+                    self.passwordTextField.text = ""
                     self.performSegue(withIdentifier: self.HOME_PAGE_SEGUE, sender: nil)
                 }
             })

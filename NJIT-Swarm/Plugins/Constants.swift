@@ -11,7 +11,7 @@ import Foundation
 class Constants {
     // DBProvider
     static let USER = "user"
-    static let USERDATA = "userdata"
+    // Keys for user
     static let EMAIL = "email"
     static let PASSWORD = "password"
     static let USERNAME = "username"
