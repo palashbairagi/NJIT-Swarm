@@ -49,8 +49,11 @@ class DBProvider {
     func getUserData(withID: String, dataHandler: DataHandler?) {
         userRef.child(withID).observeSingleEvent(of: .value) { (snapshot) in
             if let value = snapshot.value {
-                let data = value as! [String: Any]
-                dataHandler?(data)
+                if let data = value as? [String: Any] {
+                    dataHandler?(data)
+                } else {
+                    dataHandler?(nil)
+                }
             } else {
                 dataHandler?(nil)
             }
@@ -65,26 +68,70 @@ class DBProvider {
      Like [uid1: [username: min, email: min@mail.com, ... ], uid2: [username: asha, email: asha@mail.com, ...], ...]
      */
     func getUsers(withKey: String, value: Any, dataHandler: DataHandler?) {
-        userRef.queryOrdered(byChild: withKey).queryEqual(toValue: value).observeSingleEvent(of: .value) { (snapshot) in
+        userRef.queryOrdered(byChild: withKey).queryEqual(toValue: value, childKey: withKey).observeSingleEvent(of: .value) { (snapshot) in
             if let value = snapshot.value {
-                let data = value as! [String: Any]
-                dataHandler?(data)
+                if let data = value as? [String: Any] {
+                    dataHandler?(data)
+                } else {
+                    dataHandler?(nil)
+                }
             } else {
                 dataHandler?(nil)
             }
         }
     }
     
-    func saveCheckin(withID: String, place: String, latitude: Double, longitude: Double) {
-        let data: Dictionary<String, Any> = [Constants.UID: withID, Constants.PLACE: place, Constants.LATITUDE: latitude, Constants.LONGITUDE: longitude, Constants.TIMESTAMP: ServerValue.timestamp()]
+    func saveFriend(withID: String, friendID: String) {
+        userRef.child(withID).child(Constants.FRIENDS).child(friendID).setValue(true)
+        userRef.child(friendID).child(Constants.FRIENDS).child(withID).setValue(true)
+    }
+    
+    func getFriends(withID: String, dataHandler: DataHandler?) {
+        userRef.child(withID).child(Constants.FRIENDS).observeSingleEvent(of: .value) { (snapshot) in
+            if let value = snapshot.value {
+                if let data = value as? [String: Any] {
+                    dataHandler?(data)
+                } else {
+                    dataHandler?(nil)
+                }
+            } else {
+                dataHandler?(nil)
+            }
+        }
+    }
+    
+    func getAllUsers(dataHandler: DataHandler?) {
+        userRef.observeSingleEvent(of: .value) { (snapshot) in
+            if let value = snapshot.value {
+                if let data = value as? [String: Any] {
+                    dataHandler?(data)
+                } else {
+                    dataHandler?(nil)
+                }
+            } else {
+                dataHandler?(nil)
+            }
+        }
+    }
+    
+    func removeFriend(withID: String, friendID: String) {
+        userRef.child(withID).child(Constants.FRIENDS).child(friendID).removeValue()
+        userRef.child(friendID).child(Constants.FRIENDS).child(withID).removeValue()
+    }
+    
+    func saveCheckin(withID: String, place: String, message: String, latitude: Double, longitude: Double) {
+        let data: Dictionary<String, Any> = [Constants.UID: withID, Constants.PLACE: place, Constants.MESSAGE: message, Constants.LATITUDE: latitude, Constants.LONGITUDE: longitude, Constants.TIMESTAMP: ServerValue.timestamp()]
         checkinRef.childByAutoId().setValue(data)
     }
     
     func getCheckins(dataHandler: DataHandler?) {
-        checkinRef.queryOrdered(byChild: Constants.TIMESTAMP).queryLimited(toLast: 100).observeSingleEvent(of: .value) { (snapshot) in
+        checkinRef.observeSingleEvent(of: .value) { (snapshot) in
             if let value = snapshot.value {
-                let data = value as! [String: Any]
-                dataHandler?(data)
+                if let data = value as? [String: Any] {
+                    dataHandler?(data)
+                } else {
+                    dataHandler?(nil)
+                }
             } else {
                 dataHandler?(nil)
             }
@@ -94,8 +141,11 @@ class DBProvider {
     func getCheckins(withID: String, dataHandler: DataHandler?) {
         checkinRef.queryOrdered(byChild: Constants.TIMESTAMP).queryEqual(toValue: withID, childKey: Constants.UID).observeSingleEvent(of: .value) { (snapshot) in
             if let value = snapshot.value {
-                let data = value as! [String: Any]
-                dataHandler?(data)
+                if let data = value as? [String: Any] {
+                    dataHandler?(data)
+                } else {
+                    dataHandler?(nil)
+                }
             } else {
                 dataHandler?(nil)
             }

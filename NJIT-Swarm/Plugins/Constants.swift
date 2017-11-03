@@ -16,6 +16,7 @@ class Constants {
     static let PASSWORD = "password"
     static let USERNAME = "username"
     static let PHONE = "phone"
+    static let FRIENDS = "friends"
     // Keys for check in
     static let CHECKIN = "checkin"
     static let LATITUDE = "latitude"
@@ -23,4 +24,8 @@ class Constants {
     static let PLACE = "place"
     static let TIMESTAMP = "timestamp"
     static let UID = "uid"
+    static let MESSAGE = "message"
+    static let COMMENT = "comment"
+    // Keys for place
+    
 }

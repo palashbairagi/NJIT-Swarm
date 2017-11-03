@@ -29,7 +29,8 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate, UITableVi
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        FriendsData.Instance.update(handler: nil)
+        CheckinsData.Instance.update(handler: nil)
         // Do any additional setup after loading the view.
     }
 
