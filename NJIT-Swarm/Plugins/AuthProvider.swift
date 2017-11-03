@@ -61,6 +61,30 @@ class AuthProvider {
         return true
     }
     
+    func updateEmail(email: String, authHandler: AuthHandler?) {
+        if let user = Auth.auth().currentUser {
+            user.updateEmail(to: email, completion: { (error) in
+                if (error != nil) {
+                    self.handleError(withError: error! as NSError, authHandler: authHandler)
+                } else {
+                    authHandler?(nil)
+                }
+            })
+        }
+    }
+    
+    func updatePassword(password: String, authHandler: AuthHandler?) {
+        if let user = Auth.auth().currentUser {
+            user.updatePassword(to: password, completion: { (error) in
+                if (error != nil) {
+                    self.handleError(withError: error! as NSError, authHandler: authHandler)
+                } else {
+                    authHandler?(nil)
+                }
+            })
+        }
+    }
+
     func handleError(withError: NSError, authHandler: AuthHandler?) {
         if let errorCode = AuthErrorCode(rawValue: withError.code) {
             switch errorCode {
@@ -81,4 +105,9 @@ class AuthProvider {
             }
         }
     }
+    
+    func getUserID() -> String? {
+        return Auth.auth().currentUser?.uid
+    }
+    
 }
