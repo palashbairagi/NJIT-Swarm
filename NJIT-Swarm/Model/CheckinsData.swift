@@ -15,6 +15,7 @@ struct CheckinData {
     var uid = ""
     var timestamp = Date()
     var message = ""
+    var username = ""
 }
 
 typealias CheckinsDataUpdataHandler = (_ data: Array<CheckinData>) -> Void
@@ -61,6 +62,7 @@ class CheckinsData {
                                     if let timestamp = cData[Constants.TIMESTAMP] as? Date {
                                         newData.timestamp = timestamp
                                     }
+                                    newData.username = fData.username
                                     self._data.append(newData)
                                 }
                             }
