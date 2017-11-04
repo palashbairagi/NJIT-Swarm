@@ -81,6 +81,20 @@ class DBProvider {
         }
     }
     
+    func getUsers(withValue: Any, dataHandler: DataHandler?) {
+        userRef.queryOrderedByKey().queryEqual(toValue: withValue).observeSingleEvent(of: .value) { (snapshot) in
+            if let value = snapshot.value {
+                if let data = value as? [String: Any] {
+                    dataHandler?(data)
+                } else {
+                    dataHandler?(nil)
+                }
+            } else {
+                dataHandler?(nil)
+            }
+        }
+    }
+    
     func saveFriend(withID: String, friendID: String) {
         userRef.child(withID).child(Constants.FRIENDS).child(friendID).setValue(true)
         userRef.child(friendID).child(Constants.FRIENDS).child(withID).setValue(true)
