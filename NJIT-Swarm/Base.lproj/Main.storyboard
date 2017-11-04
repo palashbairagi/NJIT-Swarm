@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -213,18 +214,47 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="RlD-7u-TpG">
-                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="83" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="RlD-7u-TpG">
+                                <rect key="frame" x="0.0" y="64" width="375" height="571"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="reuseFriendsCell" id="vQ0-Oj-iEH">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="reuseFriendsCell" rowHeight="82" id="vQ0-Oj-iEH" customClass="FriendsTableViewCell" customModule="NJIT_Swarm" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="82"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="vQ0-Oj-iEH" id="GZn-t6-1hY">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="81.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="8a9-9g-Dpp">
+                                                    <rect key="frame" x="8" y="0.0" width="95" height="74"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" secondItem="8a9-9g-Dpp" secondAttribute="height" multiplier="95:74" id="5pd-vb-dWI"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a7G-5S-gIG">
+                                                    <rect key="frame" x="111" y="0.0" width="232" height="74"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" secondItem="a7G-5S-gIG" secondAttribute="height" multiplier="116:37" id="ff8-N9-cd0"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="42"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="a7G-5S-gIG" secondAttribute="trailing" constant="32" id="4y6-3Q-VUw"/>
+                                                <constraint firstAttribute="bottom" secondItem="a7G-5S-gIG" secondAttribute="bottom" constant="7.5" id="Fd8-8U-w7k"/>
+                                                <constraint firstAttribute="bottom" secondItem="8a9-9g-Dpp" secondAttribute="bottom" constant="7.5" id="S01-bE-3wH"/>
+                                                <constraint firstItem="8a9-9g-Dpp" firstAttribute="leading" secondItem="GZn-t6-1hY" secondAttribute="leading" constant="8" id="qmw-t1-3zA"/>
+                                                <constraint firstItem="8a9-9g-Dpp" firstAttribute="top" secondItem="GZn-t6-1hY" secondAttribute="top" id="rf3-2m-Z1v"/>
+                                                <constraint firstItem="a7G-5S-gIG" firstAttribute="top" secondItem="GZn-t6-1hY" secondAttribute="top" id="z8M-7E-jCa"/>
+                                            </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="myImage" destination="8a9-9g-Dpp" id="D4H-Nb-gVf"/>
+                                            <outlet property="myLabel" destination="a7G-5S-gIG" id="Cvj-72-cGH"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
@@ -238,6 +268,7 @@
                     </view>
                     <connections>
                         <outlet property="friendTableView" destination="RlD-7u-TpG" id="xRc-4a-3mH"/>
+                        <outlet property="tableView" destination="RlD-7u-TpG" id="8fu-wh-9ak"/>
                         <segue destination="2wa-3Y-BJG" kind="show" identifier="addFriend" id="dvg-m3-8HM"/>
                     </connections>
                 </viewController>

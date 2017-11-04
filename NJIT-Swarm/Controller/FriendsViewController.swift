@@ -7,30 +7,68 @@
 //
 
 import UIKit
-
+import FirebaseDatabase
 class FriendsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     private let ADD_FRIEND_SEGUE = "addFriend"
+    
+    @IBOutlet weak var tableView: UITableView!
+    var ref:DatabaseReference?
+    var databaseHandle:DatabaseHandle?
 
+    let people = [String]()
     @IBOutlet weak var friendTableView: UITableView!
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return FriendsData.Instance.Data.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return UITableViewCell()
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseFriendsCell", for: indexPath) as! FriendsTableViewCell
+        let data = FriendsData.Instance.Data[indexPath.row]
+        cell.myImage.image = UIImage(named:"swarm.png")
+        cell.myLabel.text = data.username
+        
+        
+        return cell
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+
+        
+        /*FriendsData.Instance.update { (friends) in
+            friendTableView.reloadData()
+        }
 
         // Do any additional setup after loading the view.
+        friendTableView.delegate = self
+        friendTableView.dataSource = self
+        
+        //set firebase reference
+        ref = Database.database().reference()
+        //retrieve users and listen for changes
+        databaseHandle = ref?.child("user").observe(.childAdded, with: { (snapshot) in
+            //code to execute when a child is addd
+            //take data from snapshot ad add to user/people array
+            let post = snapshot.value as? String
+            if let actualPost = post {
+                self.people.append(actualPost)
+                //reload
+                self.friendTableView.reloadData()
+            }
+        })*/
+        
+        
+        
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+        
     }
     
     @IBAction func back(_ sender: Any) {
