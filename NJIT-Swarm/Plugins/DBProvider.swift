@@ -82,21 +82,6 @@ class DBProvider {
         }
     }
     
-    func getUsers(withValue: Any, dataHandler: DataHandler?) {
-        userRef.queryOrderedByKey().queryEqual(toValue: withValue).observeSingleEvent(of: .value) { (snapshot) in
-            print(snapshot)
-            if let value = snapshot.value {
-                if let data = value as? [String: Any] {
-                    dataHandler?(data)
-                } else {
-                    dataHandler?(nil)
-                }
-            } else {
-                dataHandler?(nil)
-            }
-        }
-    }
-    
     func saveFriend(withID: String, friendID: String) {
         userRef.child(withID).child(Constants.FRIENDS).child(friendID).setValue(true)
         userRef.child(friendID).child(Constants.FRIENDS).child(withID).setValue(true)
@@ -105,6 +90,7 @@ class DBProvider {
     func getFriends(withID: String, dataHandler: DataHandler?) {
         userRef.child(withID).child(Constants.FRIENDS).observeSingleEvent(of: .value) { (snapshot) in
             if let value = snapshot.value {
+                print(snapshot)
                 if let data = value as? [String: Any] {
                     dataHandler?(data)
                 } else {
@@ -118,6 +104,7 @@ class DBProvider {
     
     func getAllUsers(dataHandler: DataHandler?) {
         userRef.observeSingleEvent(of: .value) { (snapshot) in
+            print(snapshot)
             if let value = snapshot.value {
                 if let data = value as? [String: Any] {
                     dataHandler?(data)
@@ -142,6 +129,7 @@ class DBProvider {
     
     func getCheckins(dataHandler: DataHandler?) {
         checkinRef.observeSingleEvent(of: .value) { (snapshot) in
+            print(snapshot)
             if let value = snapshot.value {
                 if let data = value as? [String: Any] {
                     dataHandler?(data)
@@ -155,7 +143,8 @@ class DBProvider {
     }
     
     func getCheckins(withID: String, dataHandler: DataHandler?) {
-        checkinRef.queryOrdered(byChild: Constants.TIMESTAMP).queryEqual(toValue: withID, childKey: Constants.UID).observeSingleEvent(of: .value) { (snapshot) in
+        checkinRef.queryOrdered(byChild: Constants.UID).queryEqual(toValue: withID).observeSingleEvent(of: .value) { (snapshot) in
+            print(snapshot)
             if let value = snapshot.value {
                 if let data = value as? [String: Any] {
                     dataHandler?(data)
