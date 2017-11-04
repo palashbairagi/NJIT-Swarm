@@ -19,7 +19,7 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate, UITableVi
     @IBOutlet weak var homeTableView: UITableView!
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 0
+        return 1
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

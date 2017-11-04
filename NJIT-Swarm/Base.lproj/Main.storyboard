@@ -227,6 +227,10 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="y3b-Xp-p2Q" id="cMD-aq-5GP"/>
+                                    <outlet property="delegate" destination="y3b-Xp-p2Q" id="Cwu-0j-9Y2"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -463,6 +467,10 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="PEJ-5J-vEZ" id="Tix-AO-yrJ"/>
+                                    <outlet property="delegate" destination="PEJ-5J-vEZ" id="vUN-4x-jsM"/>
+                                </connections>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nm3-7w-vQ9">
                                 <rect key="frame" x="16" y="235" width="44" height="30"/>

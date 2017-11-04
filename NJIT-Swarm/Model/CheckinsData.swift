@@ -41,7 +41,7 @@ class CheckinsData {
                     if let cData = checkinData.value as? [String: Any] {
                         for fData in FriendsData.Instance.Data {
                             if let cUid = cData[Constants.UID] as? String {
-                                if cUid == fData.uid {
+                                if cUid == fData.uid || cUid == AuthProvider.Instance.getUserID() {
                                     var newData = CheckinData()
                                     if let latitude = cData[Constants.LATITUDE] as? Double {
                                         newData.latitude = latitude
