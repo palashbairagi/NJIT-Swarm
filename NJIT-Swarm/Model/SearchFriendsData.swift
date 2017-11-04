@@ -49,6 +49,7 @@ class SearchFriendsData {
                             newData.phone = phone
                         }
                     }
+                    
                     self._data.append(newData)
                 }
             }
