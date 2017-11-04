@@ -8,18 +8,6 @@
 
 import Foundation
 
-struct CheckinData {
-    var place = ""
-    var latitude = Double()
-    var longitute = Double()
-    var uid = ""
-    var timestamp = Date()
-    var message = ""
-    var username = ""
-}
-
-typealias CheckinsDataUpdataHandler = (_ data: Array<CheckinData>) -> Void
-
 class CheckinsData {
     private static let _instance = CheckinsData()
     private init() {}
@@ -35,7 +23,7 @@ class CheckinsData {
     }
     
     // get all friends and current user's checkins data
-    func update(handler: CheckinsDataUpdataHandler?) {
+    func update(handler: CheckinDataHandler?) {
         _data.removeAll()
         DBProvider.Instance.getCheckins { (checkinsData) in
             if checkinsData != nil {

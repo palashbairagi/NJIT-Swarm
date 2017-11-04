@@ -8,7 +8,14 @@
 
 import Foundation
 
-typealias SearchFriendsDataHandler = (_ data: Array<FriendData>) -> Void
+/*
+ struct FriendData {
+ var uid = ""
+ var username = ""
+ var phone = ""
+ var email = ""
+ }
+ */
 
 class SearchFriendsData {
     private static let _instance = SearchFriendsData()
@@ -24,7 +31,7 @@ class SearchFriendsData {
         }
     }
     
-    func searchFriends(withKey: String, value: String, handler: SearchFriendsDataHandler?) {
+    func searchFriends(withKey: String, value: String, handler: FriendDataHandler?) {
         _data.removeAll()
         DBProvider.Instance.getUsers(withKey: withKey, value: value) { (friendsData) in
             if friendsData != nil {

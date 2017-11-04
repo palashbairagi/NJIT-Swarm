@@ -8,7 +8,17 @@
 
 import Foundation
 
-typealias UserCheckinsDataUpdataHandler = (_ data: Array<CheckinData>) -> Void
+/*
+ struct CheckinData {
+ var place = ""
+ var latitude = Double()
+ var longitute = Double()
+ var uid = ""
+ var timestamp = Date()
+ var message = ""
+ var username = ""
+ }
+ */
 
 class UserCheckinsData {
     private static let _instance = UserCheckinsData()
@@ -25,7 +35,7 @@ class UserCheckinsData {
     }
     
     // get a single user's checkins data
-    func getUserCheckinsData(withID: String, handler: UserCheckinsDataUpdataHandler?) {
+    func getUserCheckinsData(withID: String, handler: CheckinDataHandler?) {
         _data.removeAll()
         DBProvider.Instance.getUserData(withID: withID) { (userData) in
             if userData != nil {

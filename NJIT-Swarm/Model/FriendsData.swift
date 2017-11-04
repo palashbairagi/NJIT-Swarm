@@ -8,15 +8,6 @@
 
 import Foundation
 
-struct FriendData {
-    var uid = ""
-    var username = ""
-    var phone = ""
-    var email = ""
-}
-
-typealias FriendsDataUpdataHandler = (_ data: Array<FriendData>) -> Void
-
 class FriendsData {
     private static let _instance = FriendsData()
     private init() {}
@@ -31,7 +22,7 @@ class FriendsData {
         }
     }
     
-    func update(handler: FriendsDataUpdataHandler?) {
+    func update(handler: FriendDataHandler?) {
         _data.removeAll()
         DBProvider.Instance.getAllUsers { (usersData) in
             DBProvider.Instance.getFriends(withID: AuthProvider.Instance.getUserID()!, dataHandler: { (friendsData) in
