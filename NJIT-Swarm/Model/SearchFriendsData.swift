@@ -56,4 +56,29 @@ class SearchFriendsData {
             handler?(self._data)
         }
     }
+    
+    func searchFriends(withValue: String, handler: FriendDataHandler?) {
+        _data.removeAll()
+        DBProvider.Instance.getUsers(withValue: withValue) { (friendsData) in
+            if friendsData != nil {
+                for d in friendsData! {
+                    var newData = FriendData()
+                    newData.uid = d.key
+                    if let fData = d.value as? [String: Any] {
+                        if let email = fData[Constants.EMAIL] as? String {
+                            newData.email = email
+                        }
+                        if let name = fData[Constants.USERNAME] as? String {
+                            newData.username = name
+                        }
+                        if let phone = fData[Constants.PHONE] as? String {
+                            newData.phone = phone
+                        }
+                    }
+                    self._data.append(newData)
+                }
+            }
+            handler?(self._data)
+        }
+    }
 }

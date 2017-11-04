@@ -27,5 +27,4 @@ class Constants {
     static let MESSAGE = "message"
     static let COMMENT = "comment"
     // Keys for place
-    
 }

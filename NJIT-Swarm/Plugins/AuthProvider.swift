@@ -18,6 +18,7 @@ struct AUTH_ERROR_MESSAGE {
     static let INVALID_EMAIL = "Invalid email"
     static let EMAIL_PASSWORD_EMPTY = "Email OR Password Is Empty"
     static let LOGOUT_FAILED = "Logout Failed"
+    static let PASSWORD_TOO_WEAK = "Password Too Weak"
     static let DEFAULT = "Unknown Error"
 }
 
@@ -99,6 +100,9 @@ class AuthProvider {
                 break
             case AuthErrorCode.invalidEmail:
                 authHandler?(AUTH_ERROR_MESSAGE.INVALID_EMAIL)
+                break
+            case AuthErrorCode.weakPassword:
+                authHandler?(AUTH_ERROR_MESSAGE.PASSWORD_TOO_WEAK)
                 break
             default:
                 authHandler?(AUTH_ERROR_MESSAGE.DEFAULT)
