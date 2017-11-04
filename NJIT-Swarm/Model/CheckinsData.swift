@@ -34,6 +34,7 @@ class CheckinsData {
         }
     }
     
+    // get all friends and current user's checkins data
     func update(handler: CheckinsDataUpdataHandler?) {
         _data.removeAll()
         DBProvider.Instance.getCheckins { (checkinsData) in
