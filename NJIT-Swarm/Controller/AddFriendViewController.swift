@@ -20,7 +20,8 @@ class AddFriendViewController: UIViewController, UITableViewDelegate, UITableVie
     
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = UITableViewCell()
+        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseAddFriendCell", for: indexPath) as! addFriendsvwTableViewCell
+        cell.index = indexPath.row
         let data = SearchFriendsData.Instance.Data[indexPath.row]
         cell.textLabel?.text = data.username
         cell.detailTextLabel?.text = data.email
