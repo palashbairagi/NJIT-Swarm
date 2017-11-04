@@ -68,7 +68,23 @@ class DBProvider {
      Like [uid1: [username: min, email: min@mail.com, ... ], uid2: [username: asha, email: asha@mail.com, ...], ...]
      */
     func getUsers(withKey: String, value: Any, dataHandler: DataHandler?) {
-        userRef.queryOrdered(byChild: withKey).queryEqual(toValue: value, childKey: withKey).observeSingleEvent(of: .value) { (snapshot) in
+        userRef.queryOrdered(byChild: withKey).queryEqual(toValue: value).observeSingleEvent(of: .value) { (snapshot) in
+            print(snapshot)
+            if let value = snapshot.value {
+                if let data = value as? [String: Any] {
+                    dataHandler?(data)
+                } else {
+                    dataHandler?(nil)
+                }
+            } else {
+                dataHandler?(nil)
+            }
+        }
+    }
+    
+    func getUsers(withValue: Any, dataHandler: DataHandler?) {
+        userRef.queryOrderedByKey().queryEqual(toValue: withValue).observeSingleEvent(of: .value) { (snapshot) in
+            print(snapshot)
             if let value = snapshot.value {
                 if let data = value as? [String: Any] {
                     dataHandler?(data)
