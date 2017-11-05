@@ -28,12 +28,13 @@
 		6EB657521FAD747A002E0E28 /* SearchFriendsData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EB657511FAD747A002E0E28 /* SearchFriendsData.swift */; };
 		6EB657561FAD7A9C002E0E28 /* UserCheckinsData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EB657551FAD7A9C002E0E28 /* UserCheckinsData.swift */; };
 		6EB657581FAD8095002E0E28 /* DataStructure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EB657571FAD8095002E0E28 /* DataStructure.swift */; };
-		6EB6575A1FAE54D8002E0E28 /* StorageProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EB657591FAE54D8002E0E28 /* StorageProvider.swift */; };
+		6EB6575C1FAEC13D002E0E28 /* addFriendsvwTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EB6575B1FAEC13D002E0E28 /* addFriendsvwTableViewCell.swift */; };
 		6EDD94F61FAAAA68001C15D9 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6E1C38931F9196C90077BDE5 /* GoogleService-Info.plist */; };
 		6EDD94FB1FAAAC26001C15D9 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EDD94FA1FAAAC26001C15D9 /* LoginViewController.swift */; };
 		6EDD95001FAAAEEF001C15D9 /* AuthProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EDD94FF1FAAAEEF001C15D9 /* AuthProvider.swift */; };
-		C150FE8E1FAE78A6004390F0 /* addFriendsvwTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C150FE8D1FAE78A6004390F0 /* addFriendsvwTableViewCell.swift */; };
 		C2264122B46E81F59614D682 /* Pods_NJIT_SwarmUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 531E0889624962F42DE52D6A /* Pods_NJIT_SwarmUITests.framework */; };
+		E1C042F21FAE60C90062D229 /* FriendsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1C042F11FAE60C90062D229 /* FriendsTableViewCell.swift */; };
+		E1C042F41FAE6F5E0062D229 /* swarm.png in Resources */ = {isa = PBXBuildFile; fileRef = E1C042F31FAE6F5E0062D229 /* swarm.png */; };
 		FE271D9ECA8FE84746507C8F /* Pods_NJIT_SwarmTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE4000B129262CC5060DFC9C /* Pods_NJIT_SwarmTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -84,7 +85,7 @@
 		6EB657511FAD747A002E0E28 /* SearchFriendsData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchFriendsData.swift; sourceTree = "<group>"; };
 		6EB657551FAD7A9C002E0E28 /* UserCheckinsData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCheckinsData.swift; sourceTree = "<group>"; };
 		6EB657571FAD8095002E0E28 /* DataStructure.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataStructure.swift; sourceTree = "<group>"; };
-		6EB657591FAE54D8002E0E28 /* StorageProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageProvider.swift; sourceTree = "<group>"; };
+		6EB6575B1FAEC13D002E0E28 /* addFriendsvwTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = addFriendsvwTableViewCell.swift; sourceTree = "<group>"; };
 		6EDD94FA1FAAAC26001C15D9 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		6EDD94FF1FAAAEEF001C15D9 /* AuthProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthProvider.swift; sourceTree = "<group>"; };
 		7A01A015FF888920F822C203 /* Pods-NJIT-SwarmTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NJIT-SwarmTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-NJIT-SwarmTests/Pods-NJIT-SwarmTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -92,8 +93,9 @@
 		BB6829700672356052BBB390 /* Pods_NJIT_Swarm.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NJIT_Swarm.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BE4000B129262CC5060DFC9C /* Pods_NJIT_SwarmTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NJIT_SwarmTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BED97FA4831FE55CCA9612FC /* Pods-NJIT-SwarmTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NJIT-SwarmTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-NJIT-SwarmTests/Pods-NJIT-SwarmTests.release.xcconfig"; sourceTree = "<group>"; };
-		C150FE8D1FAE78A6004390F0 /* addFriendsvwTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = addFriendsvwTableViewCell.swift; sourceTree = "<group>"; };
 		C3F8C7D397BD6C183E4CBA97 /* Pods-NJIT-Swarm.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NJIT-Swarm.debug.xcconfig"; path = "Pods/Target Support Files/Pods-NJIT-Swarm/Pods-NJIT-Swarm.debug.xcconfig"; sourceTree = "<group>"; };
+		E1C042F11FAE60C90062D229 /* FriendsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsTableViewCell.swift; sourceTree = "<group>"; };
+		E1C042F31FAE6F5E0062D229 /* swarm.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = swarm.png; sourceTree = "<group>"; };
 		F157F2EB3C1634BEF9C339DA /* Pods-NJIT-SwarmUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NJIT-SwarmUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-NJIT-SwarmUITests/Pods-NJIT-SwarmUITests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -164,6 +166,7 @@
 		6E1C38641F9196850077BDE5 /* NJIT-Swarm */ = {
 			isa = PBXGroup;
 			children = (
+				E1C042F31FAE6F5E0062D229 /* swarm.png */,
 				6EDD94FE1FAAAED2001C15D9 /* Plugins */,
 				6EDD94F91FAAABBB001C15D9 /* Controller */,
 				6EDD94F81FAAABB4001C15D9 /* View */,
@@ -218,7 +221,8 @@
 		6EDD94F91FAAABBB001C15D9 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				C150FE8D1FAE78A6004390F0 /* addFriendsvwTableViewCell.swift */,
+				6EB6575B1FAEC13D002E0E28 /* addFriendsvwTableViewCell.swift */,
+				E1C042F11FAE60C90062D229 /* FriendsTableViewCell.swift */,
 				6EDD94FA1FAAAC26001C15D9 /* LoginViewController.swift */,
 				6E167EB61FAB055000CB628B /* HomeViewController.swift */,
 				6EB189D31FABAF3D002CF9B9 /* ProfileViewController.swift */,
@@ -235,7 +239,6 @@
 				6EDD94FF1FAAAEEF001C15D9 /* AuthProvider.swift */,
 				6EB189D71FABBE75002CF9B9 /* DBProvider.swift */,
 				6EB189D91FABC0F1002CF9B9 /* Constants.swift */,
-				6EB657591FAE54D8002E0E28 /* StorageProvider.swift */,
 			);
 			path = Plugins;
 			sourceTree = "<group>";
@@ -369,6 +372,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E1C042F41FAE6F5E0062D229 /* swarm.png in Resources */,
 				6EDD94F61FAAAA68001C15D9 /* GoogleService-Info.plist in Resources */,
 				6E1C38701F9196850077BDE5 /* LaunchScreen.storyboard in Resources */,
 				6E1C386D1F9196850077BDE5 /* Assets.xcassets in Resources */,
@@ -553,10 +557,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6EB6575A1FAE54D8002E0E28 /* StorageProvider.swift in Sources */,
 				6EB657561FAD7A9C002E0E28 /* UserCheckinsData.swift in Sources */,
 				6EB189D61FABB11B002CF9B9 /* SignUpViewController.swift in Sources */,
 				6E46A1D81FACE1CF007571A8 /* FriendsViewController.swift in Sources */,
+				E1C042F21FAE60C90062D229 /* FriendsTableViewCell.swift in Sources */,
 				6E46A1DA1FACE2C5007571A8 /* AddFriendViewController.swift in Sources */,
 				6EB657521FAD747A002E0E28 /* SearchFriendsData.swift in Sources */,
 				6EDD94FB1FAAAC26001C15D9 /* LoginViewController.swift in Sources */,
@@ -568,7 +572,7 @@
 				6E167EB71FAB055000CB628B /* HomeViewController.swift in Sources */,
 				6EB657581FAD8095002E0E28 /* DataStructure.swift in Sources */,
 				6EB189DA1FABC0F1002CF9B9 /* Constants.swift in Sources */,
-				C150FE8E1FAE78A6004390F0 /* addFriendsvwTableViewCell.swift in Sources */,
+				6EB6575C1FAEC13D002E0E28 /* addFriendsvwTableViewCell.swift in Sources */,
 				6E4081FD1FAD125800D3F365 /* CheckinsData.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
