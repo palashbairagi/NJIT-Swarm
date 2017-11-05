@@ -157,5 +157,31 @@ class DBProvider {
         }
     }
     
+    func likeCheckin(withCheckinID: String, uid: String) {
+        checkinRef.child(withCheckinID).child(Constants.LIKE).child(uid).setValue(true)
+    }
+    func unlikeCheckin(withCheckinID: String, uid: String) {
+        checkinRef.child(withCheckinID).child(Constants.LIKE).child(uid).removeValue()
+    }
+    
+    func saveComment(withCheckinID: String, uid: String, name: String, comment: String) {
+        let data: Dictionary<String, Any> = [Constants.UID: uid, Constants.USERNAME: name, Constants.COMMENT: comment, Constants.TIMESTAMP: ServerValue.timestamp()]
+        checkinRef.child(withCheckinID).child(Constants.COMMENT).childByAutoId().setValue(data)
+    }
+    
+    func getComments(withCheckinID: String, dataHandler: DataHandler?) {
+        checkinRef.child(withCheckinID).child(Constants.COMMENT).observeSingleEvent(of: .value) { (snapshot) in
+            print(snapshot)
+            if let value = snapshot.value {
+                if let data = value as? [String: Any] {
+                    dataHandler?(data)
+                } else {
+                    dataHandler?(nil)
+                }
+            } else {
+                dataHandler?(nil)
+            }
+        }
+    }
     
 } // class

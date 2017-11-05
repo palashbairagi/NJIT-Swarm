@@ -33,6 +33,7 @@ class CheckinsData {
                             if let cUid = cData[Constants.UID] as? String {
                                 if cUid == fData.uid || cUid == AuthProvider.Instance.getUserID() {
                                     var newData = CheckinData()
+                                    newData.checkinid = checkinData.key
                                     if let latitude = cData[Constants.LATITUDE] as? Double {
                                         newData.latitude = latitude
                                     }
@@ -50,6 +51,18 @@ class CheckinsData {
                                     }
                                     if let timestamp = cData[Constants.TIMESTAMP] as? Date {
                                         newData.timestamp = timestamp
+                                    }
+                                    if let numoflike = cData[Constants.LIKE] as? [String: Any] {
+                                        newData.numoflike = numoflike.count
+                                        for like in numoflike {
+                                            if like.key == AuthProvider.Instance.getUserID() {
+                                                newData.youliked = true
+                                                break
+                                            }
+                                        }
+                                    }
+                                    if let numofcomment = cData[Constants.COMMENT] as? [String: Any] {
+                                        newData.numofcomment = numofcomment.count
                                     }
                                     newData.username = fData.username
                                     self._data.append(newData)

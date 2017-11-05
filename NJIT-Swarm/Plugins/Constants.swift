@@ -26,5 +26,6 @@ class Constants {
     static let UID = "uid"
     static let MESSAGE = "message"
     static let COMMENT = "comment"
+    static let LIKE = "like"
     // Keys for place
 }
